@@ -7,4 +7,4 @@
 - どうせなら勉強ついでにRubyで書けばいいんじゃねと思った
 
 ## 元ネタ
-- JSON形式による書誌情報の提供をはじめました - O'Reilly Japan Community Blog[http://www.oreilly.co.jp/community/blog/2010/11/bibliographical-info-in-json.html]
+- [JSON形式による書誌情報の提供をはじめました - O'Reilly Japan Community Blog](http://www.oreilly.co.jp/community/blog/2010/11/bibliographical-info-in-json.html)
