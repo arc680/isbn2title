@@ -4,7 +4,7 @@ require 'json'
 require 'fileutils'
 
 def getisbn(filename)
-  re_str = /^oreilly-(978|979)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]{1})e.pdf$/
+  re_str = /^oreilly-(978|979)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]{1})e.pdf$/ # 正直ISBNのところを(.*)で取得して，ハイフン消したらいいだけ でも正規表現の勉強としてこうしてみた
   if re_str =~ filename
     isbn = $1 + $2 + $3 + $4 + $5
     if isbn.length == 13
