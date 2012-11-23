@@ -15,11 +15,11 @@ end
 
 def getjson(isbn)
   uri = "http://www.oreilly.co.jp/books/" + isbn + "/biblio.json"
-  json = ""
+  json_data = ""
   open(uri) do |f|
-    json = JSON.load(f)
+    json_data = JSON.load(f)
   end
-  return json
+  return json_data
 end
 
 def isbn2title(filename, new_filename)
