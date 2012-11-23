@@ -22,9 +22,9 @@ def getjson(isbn)
   return json_data
 end
 
-def isbn2title(filename, new_filename)
-  FileUtils.cp(filename, "./renamed/" + new_filename)
-  print(filename + " -> " + new_filename + "\n")
+def isbn2title(filename, new_filename, extname)
+  FileUtils.cp(filename, "./renamed/" + new_filename + extname)
+  print(filename + " -> " + new_filename + extname + "\n")
 end
 
 
@@ -32,11 +32,12 @@ if File.exists?("./renamed") == false
   Dir.mkdir("./renamed")
 end
 
-files = Dir.glob("*.pdf")
+files = Dir.glob(["*.pdf", "*.epub"])
 files.each do |file|
+  extname = File.extname(file)
   isbn = getisbn(file)
   if isbn != nil
     json_data = getjson(isbn)
-    isbn2title(file, json_data['title'] + ".pdf")
+    isbn2title(file, json_data['title'], extname) # epubにも対応できるようにしよう
   end
 end
